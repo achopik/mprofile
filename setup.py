@@ -14,7 +14,10 @@ with io.open(README, encoding="utf-8") as f:
     long_description = f.read()
 
 
-def globex(pattern, exclude=[]):
+def globex(pattern, exclude=None):
+    if exclude is None:
+        exclude = []
+
     return [
         fn
         for fn in glob.iglob(pattern)

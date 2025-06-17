@@ -22,6 +22,7 @@ classifiers = [
     "Programming Language :: Python :: 3.9",
     "Programming Language :: Python :: 3.10",
     "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
     "Programming Language :: Python :: Implementation :: CPython",
     "Topic :: Software Development :: Testing",
     "Topic :: Software Development :: Libraries :: Python Modules",
@@ -30,6 +31,11 @@ classifiers = [
 [project.urls]
 "Tracker" = "https://github.com/timpalpant/mprofile/issues"
 "Source" = "https://github.com/timpalpant/mprofile"
+
+[project.optional-dependencies]
+pprof = [
+    "protobuf>=4.21.1",
+]
 
 [tool.setuptools.packages.find]
 include = ["mprofile"]
