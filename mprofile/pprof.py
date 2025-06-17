@@ -18,7 +18,10 @@ import collections
 import gzip
 import io
 
-from mprofile import profile_pb2
+try:
+  from mprofile import profile_pb2
+except ImportError:
+  raise Exception("Error importing pprof protobuf definition. Try installing package with [pprof] extra")
 
 Func = collections.namedtuple('Func', ['name', 'filename', 'start_line'])
 Loc = collections.namedtuple('Loc', ['func_id', 'line_number'])
